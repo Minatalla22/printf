@@ -1,11 +1,10 @@
 #include "main.h"
-
-/*
- * printf - entry point of the code
+#include "handle_format_file.h"
+/**
+ * _printf - This is the entry point of the code
  * @format: format
- * return: 0 success
+ * Return: the number of characters printed (excluding the null byte)
  */
-
 int _printf(const char *format, ...)
 {
 	va_list args;
