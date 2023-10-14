@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * handle_format - This is the entry pointof the code
+ * handle_format - entry point
  * @args: args
  * @format: format
  * Return:0 Success
@@ -18,7 +18,7 @@ int handle_format(const char *format, va_list args)
 		else if (format[h + 1] == 'c')
 		{
 			putchr(va_arg(args, int));
-			h++
+			h++;
 		}
 		else if (format[h + 1] == 's')
 		{

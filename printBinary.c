@@ -29,9 +29,9 @@ int printBinary(unsigned int num)
 	}
 	for (i = 0; i < index / 2; i++)
 	{
-		temp = buffer[i];
+		tmp = buffer[i];
 		buffer[i] = buffer[index - 1 - i];
-		buffer[index - 1 - i] = temp;
+		buffer[index - 1 - i] = tmp;
 	}
 	buffer[index] = '\0';
 	return (_puts(buffer));
