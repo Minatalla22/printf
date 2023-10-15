@@ -27,6 +27,8 @@ int printBinary(unsigned int num)
 	{
 		buffer[index++] = '0';
 	}
+	buffer[index] = '\0';
+
 	for (i = 0; i < index / 2; i++)
 	{
 		tmp = buffer[i];

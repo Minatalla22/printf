@@ -1,15 +1,16 @@
 #include "main.h"
 
 /**
- * handle_format - entry point
- * @args: args
- * @format: format
- * Return:0 Success
+ * handle_format - handle format of the output
+ * @format: format string that specified how output should be formatted
+ * @args: va_list containing the arguments to formatted
+ *Return: The  numbers of characters printed (excludeing the null byte)
  */
 int handle_format(const char *format, va_list args)
 {
 	unsigned int h = 0, r_value = 0;
-	int r_val, num;
+	int r_val = 0;
+	int num = 0;
 
 	for (; format[h] != '\0'; h++)
 	{
@@ -23,8 +24,8 @@ int handle_format(const char *format, va_list args)
 		else if (format[h + 1] == 's')
 		{
 			r_val = my_puts(va_arg(args, char *));
-		h++;
-		r_value += (r_val - 1);
+			h++;
+			r_value += (r_val - 1);
 		}
 		else if (format[h + 1] == 'b')
 		{

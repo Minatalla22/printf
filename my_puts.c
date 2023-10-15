@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * my_puts - puts
- * @str: str
- * Return:0 Success
+ * my_puts - print a string with new line
+ * @str: the string to point
+ * Return: void
  */
 int my_puts(char *str)
 {
