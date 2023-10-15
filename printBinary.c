@@ -1,38 +1,46 @@
 #include "main.h"
 /**
- * printBinary - enty point of the code
- * @num: num
- * Return: 0 Success
+ * print_binary - Prints an unsigned number
+ * @types: Lista of arguments
+ * @buffer: Buffer array to handle print
+ * @flags:  Calculates active flags
+ * @width: get width.
+ * @precision: Precision specification
+ * @size: Size specifier
+ * Return: Numbers of char printed.
  */
-int printBinary(unsigned int num)
+int print_binary(va_list types, char buffer[],
+	int flags, int width, int precision, int size)
 {
-	char buffer[BUFF_SIZE], tmp;
-	int index = 0;
-	int i, digit;
+	unsigned int n, m, i, sum;
+	unsigned int a[32];
+	int count;
 
-	if (num == 0)
+	UNUSED(buffer);
+	UNUSED(flags);
+	UNUSED(width);
+	UNUSED(precision);
+	UNUSED(size);
+
+	n = va_arg(types, unsigned int);
+	m = 2147483648; /* (2 ^ 31) */
+	a[0] = n / m;
+	for (i = 1; i < 32; i++)
 	{
-		buffer[index++] = '0';
+		m /= 2;
+		a[i] = (n / m) % 2;
 	}
-	else
+	for (i = 0, sum = 0, count = 0; i < 32; i++)
 	{
-		while (num > 0)
+		sum += a[i];
+		if (sum || i == 31)
 		{
-			digit = num % 2;
-			buffer[index++] = '0' + digit;
-			num /= 2;
+			char z = '0' + a[i];
+
+			write(1, &z, 1);
+			count++;
 		}
 	}
-	if (index == 0)
-	{
-		buffer[index++] = '0';
-	}
-	for (i = 0; i < index / 2; i++)
-	{
-		tmp = buffer[i];
-		buffer[i] = buffer[index - 1 - i];
-		buffer[index - 1 - i] = tmp;
-	}
-	buffer[index] = '\0';
-	return (_puts(buffer));
+	return (count);
 }
+
