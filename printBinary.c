@@ -34,5 +34,5 @@ int printBinary(unsigned int num)
 		buffer[index - 1 - i] = tmp;
 	}
 	buffer[index] = '\0';
-	return (_puts(buffer));
+	return (my_puts(buffer));
 }

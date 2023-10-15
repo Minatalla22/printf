@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * putchr - write
+ * my_putchr - write
  * @z: z
  * Return:0 Success
  */
-int putchr(char z)
+int my_putchr(char z)
 {
 	return (write(1, &z, 1));
 }

@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * _pus - pus
+ * my_puts - puts
  * @str: str
  * Return:0 Success
  */
-int _puts(char *str)
+int my_puts(char *str)
 {
 	int i = 0, b = 0, s;
 	char *x = "(null)";
@@ -13,12 +13,12 @@ int _puts(char *str)
 	if (!str)
 	{
 		for (s = 0 ; s < 6 ; s++)
-			putchr(x[s]);
+			my_putchr(x[s]);
 		return (s);
 	}
 	while (str[i] != '\0')
 	{
-		putchr(str[i]);
+		my_putchr(str[i]);
 		b++;
 		i++;
 	} return (b);

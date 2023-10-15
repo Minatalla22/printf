@@ -8,8 +8,8 @@
 #include <limits.h>
 #include <stdbool.h>
 int _printf(const char *format, ...);
-int putchr(char z);
-int _puts(char *string);
+int my_putchr(char z);
+int my_puts(char *string);
 int printBinary(unsigned int num);
 char *print_int(int n);
 int handle_format(const char *format, va_list args);
