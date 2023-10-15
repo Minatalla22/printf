@@ -5,7 +5,7 @@
  * @str: str
  * Return:0 Success
  */
-int _pus(char *str)
+int _puts(char *str)
 {
 	int i = 0, b = 0, s;
 	char *x = "(null)";
@@ -13,12 +13,12 @@ int _pus(char *str)
 	if (!str)
 	{
 		for (s = 0 ; s < 6 ; s++)
-			puchr(x[s]);
+			putchr(x[s]);
 		return (s);
 	}
 	while (str[i] != '\0')
 	{
-		puchr(str[i]);
+		putchr(str[i]);
 		b++;
 		i++;
 	} return (b);
