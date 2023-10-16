@@ -30,8 +30,9 @@ int handle_format(const char *format, va_list args)
 			h++; } else if (format[h + 1] == '%')
 		{
 			my_putchr('%');
-			h++; } else
+			h++;}	else
 			my_putchr('%');
 		r_value += 1; }
+	print_int(*format);
 	return (r_value);
 }
