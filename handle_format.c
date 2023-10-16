@@ -38,8 +38,7 @@ int handle_format(const char *format, va_list args)
 			my_putchr('%');
 			h++; }
 		else
-			putchr('%');
-		r_value += 1;
-	}
+			my_putchr('%');
+		r_value += 1; }
 	return (r_value);
 }
