@@ -24,9 +24,8 @@ int handle_format(const char *format, va_list args)
 			r_value += (r_val - 1); }
 		else if (format[h + 1] == 'b')
 		{
-			num = va_arg(args, int);
-			r_val  += (printBinary(va_arg(args,unsigned int))) - 1;
-			h++;	} else if (format[h + 1] == '%')
+			r_val += (printBinary(va_arg(args, unsigned int))) - 1;
+		h++; } else if (format[h + 1] == '%')
 		{
 			my_putchr('%');
 			h++;}	else
