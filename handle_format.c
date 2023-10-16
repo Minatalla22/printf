@@ -33,6 +33,5 @@ int handle_format(const char *format, va_list args)
 			h++;}	else
 			my_putchr('%');
 		r_value += 1; }
-	print_int(*format, va_list args);
 	return (r_value);
 }
