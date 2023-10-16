@@ -9,7 +9,6 @@ int handle_format(const char *format, va_list args)
 {
 	unsigned int h = 0, r_value = 0;
 	int r_val = 0;
-	int num = 0;
 
 	for (; format[h] != '\0'; h++)
 	{
