@@ -25,7 +25,7 @@ int handle_format(const char *format, va_list args)
 			r_value += (r_val - 1); }
 		else if (format[h + 1] == 'b')
 		{
-			r_val += (printBinary(va_arg(args, unsigned int))) -1;
+			r_val += (printBinary(va_arg(args, unsigned int))) - 1;
 			h++; }
 		else if (format[h + 1] == 'd' || format[h + 1] == 'i')
 		{
