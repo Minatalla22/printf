@@ -2,12 +2,11 @@
 /**
  * i_print - int i & d
  * @format: int num
- * @arg: arguments
  *Return: num
  */
 int i_print(const char *format, ...)
 {
-	int  num;
+	int  i, print_i = 0;
 	va_list list_args;
 
 	va_start(list_args, format);
@@ -19,12 +18,12 @@ int i_print(const char *format, ...)
 			format++;
 			if (*format == 'i' || *format == 'd')
 			{
-				num = va_arg(list_args, int);
-				write(1, &num, 4);
+				i = va_arg(list_args, int);
+				print_i = my_puts(print_int(i));
 			}
 		}
 		format++;
 	}
 	va_end(list_args);
-	return (num);
+	return (print_i);
 }
