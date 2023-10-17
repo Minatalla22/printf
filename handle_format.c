@@ -29,6 +29,12 @@ int handle_format(const char *format, va_list args)
 			r_val = my_puts(print_int(num));
 			r_value += (r_val - 1);
 			h++; }
+		else if (format[h + 1] == 'd' || format[h + 1] == 'i')
+		{
+			num = va_arg(args, int);
+			r_val = my_puts(print_int(num));
+			r_value += (r_val - 1);
+			h++; }
 		else if (format[h + 1] == '%')
 		{
 			my_putchr('%');
