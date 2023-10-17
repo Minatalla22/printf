@@ -14,4 +14,5 @@ char *print_int(int n);
 int printBinary(unsigned int num);
 int handle_format(const char *format, va_list args);
 int int_print(const char *format, ...);
+int i_print(const char *format, va_list arg);
 #endif
