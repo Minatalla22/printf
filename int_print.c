@@ -5,21 +5,26 @@
  * @arg: arguments
  *Return: num
  */
-int i_print(const char *format, va_list arg)
+int i_print(const char *format, ...)
 {
-	int i = 0;
-	unsigned int n = 0, v = 0;
-	int v2 = 0;
+	int  num;
+	va_list list_args;
 
-	for (; format[n] != '\0'; n++)
+	va_start(list_args, format);
+
+	while (*format)
 	{
-		if (format[n + 1] == 'd' || format[n + 1] == 'i')
+		if (*format == '%')
 		{
-			i = va_arg(arg, int);
-			v2 = my_puts(print_int(i));
-			v += (v2 - 1);
-			n++;
+			format++;
+			if (*format == 'i' || *format == 'd')
+			{
+				num = va_arg(list_args, int);
+				write(1, &num, 4);
+			}
 		}
+		format++;
 	}
-	return (v);
+	va_end(list_args);
+	return (num);
 }
