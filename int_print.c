@@ -6,7 +6,7 @@
  */
 int i_print(const char *format, ...)
 {
-	int  i, print_i = 0;
+	int  i;
 	va_list list_args;
 
 	va_start(list_args, format);
@@ -19,11 +19,11 @@ int i_print(const char *format, ...)
 			if (*format == 'i' || *format == 'd')
 			{
 				i = va_arg(list_args, int);
-				print_i = my_puts(print_int(i));
+				my_putchr(i);
 			}
 		}
 		format++;
 	}
 	va_end(list_args);
-	return (print_i);
+	return (i);
 }
